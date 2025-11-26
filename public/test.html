@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: false });
+        window.mermaid = mermaid;
+    </script>
+    <style>
+        body, html { margin: 0; padding: 0; overflow: hidden; height: 100%; width: 100%; background-color: #f9fafb; }
+        .font-hand { font-family: 'Kalam', cursive; }
+        svg { display: block; overflow: visible; }
+    </style>
+</head>
+<body>
+    <div id="container" class="w-full h-full relative cursor-grab active:cursor-grabbing">
+        <div id="transform-layer" class="absolute top-0 left-0 w-full h-full origin-top-left">
+            <svg id="canvas" class="w-full h-full"></svg>
+        </div>
+    </div>
+    
+    <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow text-sm text-gray-500 pointer-events-none">
+        InfiniLog Static View
+    </div>
+
+<script>
+    const elements = [{"id":"oohkgpcgf","type":"rectangle","x":642.86328125,"y":228.6640625,"width":157.2578125,"height":109.51171875,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"seed":4943.603550165405,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"1fr4dzn41","type":"circle","x":943.17578125,"y":349.046875,"width":125.546875,"height":108.78515625,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"seed":7950.243387565876,"renderStyle":"sketchy","roughness":1,"cornerRadius":0},{"id":"1jy9qtfio","type":"arrow","x":800.12109375,"y":316.59542268563496,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":147.99196501537608,"y":62.44150897539765}],"seed":5649.255887064903,"renderStyle":"sketchy","roughness":1,"startBindingId":"oohkgpcgf","endBindingId":"1fr4dzn41"},{"id":"849ixrva3","type":"text","x":632.1875,"y":542.4375,"width":0.125,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"text":"Text","seed":6668.396012748267,"renderStyle":"sketchy","roughness":1,"cornerRadius":0},{"id":"p1fv9u1o7","type":"text","x":631.76171875,"y":542.125,"width":102,"height":34,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"text":"hello Text","seed":3039.279556261908,"renderStyle":"sketchy","roughness":1},{"id":"bstqij4ex","type":"mermaid","x":737.8125,"y":670.6953125,"width":40.4375,"height":144,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"text":"graph TD;\n    A-->B;","seed":1851.2942700201606,"renderStyle":"sketchy","roughness":1,"cornerRadius":0},{"id":"ws3w8233c","type":"mindmap","x":799.015625,"y":508.015625,"width":152,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Central Topic","seed":4271.208170880025,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"gyf02720s","type":"mindmap","x":1011.15234375,"y":508.14453125,"width":110,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Subtopic","seed":8185.6605610157885,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"p5s5112yy","type":"arrow","x":951.015625,"y":530.0668808500745,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":60.13671875,"y":0.04055735052941145}],"seed":8986.936237016122,"renderStyle":"sketchy","roughness":1,"startBindingId":"ws3w8233c","endBindingId":"gyf02720s"},{"id":"q9mj18a7s","type":"mindmap","x":1181.015625,"y":508.015625,"width":110,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Subtopic","seed":5047.166188882327,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"kohp6ctua","type":"arrow","x":1121.15234375,"y":530.1027927194722,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":59.86328125,"y":-0.04542918894435388}],"seed":4605.665690574136,"renderStyle":"sketchy","roughness":1,"startBindingId":"gyf02720s","endBindingId":"q9mj18a7s"},{"id":"iq377nvay","type":"mindmap","x":1351.015625,"y":508.015625,"width":110,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Subtopic","seed":2947.1322693798097,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"5ua2jwpmn","type":"arrow","x":1291.015625,"y":530.015625,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":60,"y":0}],"seed":1350.0323912847489,"renderStyle":"sketchy","roughness":1,"startBindingId":"q9mj18a7s","endBindingId":"iq377nvay"},{"id":"tv8p330t0","type":"mindmap","x":1351.015625,"y":572.015625,"width":100,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Topic","seed":3586.659046029236,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"dbr9fs98d","type":"arrow","x":1291.015625,"y":551.3489583333334,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":60,"y":23.272727272727252}],"seed":2626.9486833584856,"renderStyle":"sketchy","roughness":1,"startBindingId":"q9mj18a7s","endBindingId":"tv8p330t0"},{"id":"6t2hgk3ys","type":"mindmap","x":1351.015625,"y":636.015625,"width":100,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Topic","seed":4262.048147150161,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"v5iinenoo","type":"arrow","x":1264.375,"y":552.015625,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":108.28125,"y":84}],"seed":2151.2896172051155,"renderStyle":"sketchy","roughness":1,"startBindingId":"q9mj18a7s","endBindingId":"6t2hgk3ys"},{"id":"cjhdhh1j9","type":"mindmap","x":1351.015625,"y":700.015625,"width":100,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Topic","seed":6196.118521672851,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"d6okqqgcq","type":"arrow","x":1254.921875,"y":552.015625,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":127.1875,"y":148}],"seed":413.9781450395319,"renderStyle":"sketchy","roughness":1,"startBindingId":"q9mj18a7s","endBindingId":"cjhdhh1j9"},{"id":"uiskndaut","type":"mindmap","x":1011.15234375,"y":572.14453125,"width":100,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Topic","seed":5366.164868708429,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"ltg49q6qm","type":"arrow","x":938.8715060988609,"y":552.015625,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":72.28083765113911,"y":24.902615091367466}],"seed":178.71271314988334,"renderStyle":"sketchy","roughness":1,"startBindingId":"ws3w8233c","endBindingId":"uiskndaut"},{"id":"t1x6iluvy","type":"mindmap","x":1011.15234375,"y":636.14453125,"width":100,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Topic","seed":4018.027395173425,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"s4ydc8klf","type":"arrow","x":906.9756871932258,"y":552.015625,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":122.21659436354832,"y":84.12890625}],"seed":878.2907980245891,"renderStyle":"sketchy","roughness":1,"startBindingId":"ws3w8233c","endBindingId":"t1x6iluvy"}];
+    let view = { x: 0, y: 0, zoom: 1 };
+    
+    const container = document.getElementById('container');
+    const layer = document.getElementById('transform-layer');
+    const svg = document.getElementById('canvas');
+    let isDragging = false;
+    let start = { x: 0, y: 0 };
+
+    // --- Rendering Logic (Ported from utils.ts) ---
+    const random = (seed) => {
+        const x = Math.sin(seed) * 10000;
+        return x - Math.floor(x);
+    };
+
+    const getOffset = (min, max, seed) => {
+        return min + random(seed) * (max - min);
+    };
+
+    const getRoughRect = (w, h, seed, roughness, radius = 0) => {
+        const r = Math.min(radius, Math.min(w, h) / 2);
+        const ro = roughness;
+        const o = (idx) => getOffset(-ro, ro, seed + idx);
+        
+        let path = `M ${r + o(1)} ${0 + o(2)} `;
+        path += `L ${w - r + o(3)} ${0 + o(4)} `;
+        if (r > 0) path += `Q ${w + o(5)} ${0 + o(6)} ${w + o(7)} ${r + o(8)} `;
+        else { path += `L ${w + o(5)} ${0 + o(6)} `; path += `L ${w + o(7)} ${0 + o(8)} `; }
+        path += `L ${w + o(9)} ${h - r + o(10)} `;
+        if (r > 0) path += `Q ${w + o(11)} ${h + o(12)} ${w - r + o(13)} ${h + o(14)} `;
+        else { path += `L ${w + o(11)} ${h + o(12)} `; path += `L ${w + o(13)} ${h + o(14)} `; }
+        path += `L ${r + o(15)} ${h + o(16)} `;
+        if (r > 0) path += `Q ${0 + o(17)} ${h + o(18)} ${0 + o(19)} ${h - r + o(20)} `;
+        else { path += `L ${0 + o(17)} ${h + o(18)} `; path += `L ${0 + o(19)} ${h + o(20)} `; }
+        path += `L ${0 + o(21)} ${r + o(22)} `;
+        if (r > 0) path += `Q ${0 + o(23)} ${0 + o(24)} ${r + o(25)} ${0 + o(26)} `;
+        else { path += `L ${0 + o(23)} ${0 + o(24)} `; path += `L ${r + o(25)} ${0 + o(26)} `; }
+        path += "Z";
+        return path;
+    };
+    
+    const getRoughCircle = (w, h, seed, roughness) => {
+         const r = (Math.min(w, h) * 0.02) * roughness; 
+         const rx = w / 2; const ry = h / 2;
+         const o = (idx) => getOffset(-r, r, seed + idx);
+         let path = `M ${rx + o(1)} ${0 + o(2)} `;
+         path += `C ${rx * 1.5 + o(3)} ${0 + o(4)}, ${w + o(5)} ${ry * 0.5 + o(6)}, ${w + o(7)} ${ry + o(8)} `;
+         path += `C ${w + o(9)} ${ry * 1.5 + o(10)}, ${rx * 1.5 + o(11)} ${h + o(12)}, ${rx + o(13)} ${h + o(14)} `;
+         path += `C ${rx * 0.5 + o(15)} ${h + o(16)}, ${0 + o(17)} ${ry * 1.5 + o(18)}, ${0 + o(19)} ${ry + o(20)} `;
+         path += `C ${0 + o(21)} ${ry * 0.5 + o(22)}, ${rx * 0.5 + o(23)} ${0 + o(24)}, ${rx + o(25)} ${0 + o(26)} `;
+         return path;
+    };
+    
+    const getRoughLine = (x1, y1, x2, y2, seed, width, roughness) => {
+        const r = roughness; 
+        let path = `M ${x1 + getOffset(-r, r, seed)} ${y1 + getOffset(-r, r, seed+1)} `;
+        path += `Q ${x1 + (x2-x1)/2 + getOffset(-r, r, seed+2)} ${y1 + (y2-y1)/2 + getOffset(-r, r, seed+3)} `;
+        path += `${x2 + getOffset(-r, r, seed+4)} ${y2 + getOffset(-r, r, seed+5)} `;
+        return path;
+    };
+
+    const getPath = (el) => {
+        if (el.type === 'rectangle' || el.type === 'mindmap') return getRoughRect(el.width||0, el.height||0, el.seed, el.roughness, el.cornerRadius);
+        if (el.type === 'circle') return getRoughCircle(el.width||0, el.height||0, el.seed, el.roughness);
+        if (el.type === 'arrow' || el.type === 'pencil') {
+            if (!el.points || el.points.length < 2) return "";
+            let path = "";
+            for (let i = 0; i < el.points.length - 1; i++) {
+                const p1 = el.points[i];
+                const p2 = el.points[i+1];
+                path += getRoughLine(p1.x, p1.y, p2.x, p2.y, el.seed + i*10, el.strokeWidth, el.roughness);
+            }
+            if (el.type === 'arrow') {
+                 const end = el.points[el.points.length - 1];
+                 const prev = el.points[el.points.length - 2];
+                 const dx = end.x - prev.x;
+                 const dy = end.y - prev.y;
+                 const angle = Math.atan2(dy, dx);
+                 const headLen = 15;
+                 const p1 = { x: end.x - headLen * Math.cos(angle - Math.PI/6), y: end.y - headLen * Math.sin(angle - Math.PI/6) };
+                 const p2 = { x: end.x - headLen * Math.cos(angle + Math.PI/6), y: end.y - headLen * Math.sin(angle + Math.PI/6) };
+                 path += getRoughLine(end.x, end.y, p1.x, p1.y, el.seed + 999, el.strokeWidth, el.roughness);
+                 path += getRoughLine(end.x, end.y, p2.x, p2.y, el.seed + 1000, el.strokeWidth, el.roughness);
+            }
+            return path;
+        }
+        return "";
+    };
+
+    const render = () => {
+        svg.innerHTML = '';
+        elements.forEach(el => {
+            const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+            g.setAttribute("transform", `translate(${el.x}, ${el.y})`);
+            g.style.opacity = el.opacity;
+            
+            if (el.type === 'text') {
+                const fo = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
+                fo.setAttribute("width", el.width);
+                fo.setAttribute("height", el.height);
+                fo.innerHTML = `<div class="font-hand" style="font-size: 20px; line-height: 1.2; color: ${el.strokeColor}; white-space: pre-wrap;">${el.text}</div>`;
+                g.appendChild(fo);
+            } else if (el.type === 'mermaid') {
+                 const fo = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
+                 fo.setAttribute("width", el.width);
+                 fo.setAttribute("height", el.height);
+                 const div = document.createElement("div");
+                 div.className = "mermaid";
+                 div.textContent = el.text;
+                 fo.appendChild(div);
+                 g.appendChild(fo);
+            } else {
+                const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                path.setAttribute("d", getPath(el));
+                path.setAttribute("stroke", el.strokeColor);
+                path.setAttribute("fill", el.backgroundColor);
+                path.setAttribute("stroke-width", el.strokeWidth);
+                path.setAttribute("stroke-linecap", "round");
+                path.setAttribute("stroke-linejoin", "round");
+                path.setAttribute("vector-effect", "non-scaling-stroke");
+                g.appendChild(path);
+
+                if (el.text) {
+                    const fo = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
+                    fo.setAttribute("width", el.width);
+                    fo.setAttribute("height", el.height);
+                    fo.style.pointerEvents = 'none';
+                    fo.innerHTML = `<div class="w-full h-full flex items-center justify-center text-center p-1 font-hand" style="font-size: 20px; color: ${el.strokeColor === '#000000' && el.backgroundColor !== '#ffffff' && el.backgroundColor !== 'transparent' ? 'white' : 'black'}">${el.text}</div>`;
+                    g.appendChild(fo);
+                }
+            }
+            svg.appendChild(g);
+        });
+        
+        if (window.mermaid) window.mermaid.run();
+    };
+
+    // --- Interaction Logic ---
+    const updateTransform = () => {
+        layer.style.transform = `translate(${view.x}px, ${view.y}px) scale(${view.zoom})`;
+    };
+
+    container.addEventListener('wheel', (e) => {
+        if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            const zoomSensitivity = 0.001;
+            const delta = -e.deltaY * zoomSensitivity;
+            const newZoom = Math.max(0.1, Math.min(5, view.zoom + delta));
+            
+            const rect = container.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+            
+            const worldX = (mouseX - view.x) / view.zoom;
+            const worldY = (mouseY - view.y) / view.zoom;
+            
+            view.x = mouseX - worldX * newZoom;
+            view.y = mouseY - worldY * newZoom;
+            view.zoom = newZoom;
+        } else {
+            view.x -= e.deltaX;
+            view.y -= e.deltaY;
+        }
+        updateTransform();
+    });
+
+    container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        container.style.cursor = 'grabbing';
+        start = { x: e.clientX, y: e.clientY };
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - start.x;
+        const dy = e.clientY - start.y;
+        view.x += dx;
+        view.y += dy;
+        start = { x: e.clientX, y: e.clientY };
+        updateTransform();
+    });
+
+    window.addEventListener('mouseup', () => {
+        isDragging = false;
+        container.style.cursor = 'grab';
+    });
+
+    // Initial Render
+    render();
+    updateTransform();
+</script>
+</body>
+</html>
