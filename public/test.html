@@ -254,14 +254,73 @@
     // --- Markdown/Code Logic ---
     const renderMarkdown = (text, color) => {
         if (!text) return "";
-        let html = text
-            .replace(/</g, '&lt;').replace(/>/g, '&gt;') // Escape HTML
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            .replace(/\`\`\`([\s\S]*?)\`\`\`/g, '<pre style="background:#f3f4f6; padding:8px; border-radius:4px; font-family:monospace; font-size:0.8em; overflow-x:auto;">$1</pre>');
-            
-        // Use standard newline splitting
-        return html.split('\n').map(line => `<div>${line || '<br/>'}</div>`).join('');
+        
+        // Split by code blocks delimiter
+        const parts = text.split(/(```[\s\S]*?```)/g);
+        
+        return parts.map(part => {
+            if (part.startsWith('```') && part.endsWith('```')) {
+                // --- Code Block ---
+                // Remove backticks
+                let content = part.slice(3, -3);
+                // Remove optional language identifier (first word on first line)
+                if (/^[a-z]+\n/.test(content)) {
+                     content = content.replace(/^[a-z]+\n/, '');
+                } else if (/^[a-z]+$/.test(content.split('\n')[0].trim())) {
+                     // Single line case or just language
+                     content = content.replace(/^[a-z]+/, '');
+                }
+
+                // Escape HTML
+                content = content.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                
+                // Simple Syntax Highlighting (Keywords, Strings, Comments)
+                content = content
+                    .replace(/\b(const|let|var|function|return|import|export|class|if|else|for|while|async|await)\b/g, '<span style="color:#d73a49">$1</span>')
+                    .replace(/(['"`].*?['"`])/g, '<span style="color:#a31515">$1</span>')
+                    .replace(/(\b\d+\b)/g, '<span style="color:#005cc5">$1</span>')
+                    .replace(/(\/\/.*$)/gm, '<span style="color:#6a7282">$1</span>');
+
+                return `<div style="
+                    background-color: #f6f8fa; 
+                    border-radius: 6px; 
+                    padding: 10px; 
+                    margin: 4px 0; 
+                    font-family: Consolas, Monaco, 'Courier New', monospace; 
+                    font-size: 0.85em; 
+                    border: 1px solid #e1e4e8; 
+                    white-space: pre-wrap; 
+                    text-align: left; 
+                    line-height: 1.5; 
+                    color: #24292e;
+                ">${content}</div>`;
+            } else {
+                // --- Normal Text ---
+                if (!part) return "";
+                
+                // Process line by line to handle headers and lists correctly
+                return part.split('\n').map(line => {
+                    if (line.length === 0) return '';
+                    
+                    let html = line.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    
+                    // Headers
+                    if (html.startsWith('# ')) return `<h1 style="font-size:1.5em; margin:0; font-weight:bold; line-height:1.2">${html.slice(2)}</h1>`;
+                    if (html.startsWith('## ')) return `<h2 style="font-size:1.3em; margin:0; font-weight:bold; line-height:1.2">${html.slice(3)}</h2>`;
+                    if (html.startsWith('### ')) return `<h3 style="font-size:1.15em; margin:0; font-weight:bold; line-height:1.2">${html.slice(4)}</h3>`;
+                    
+                    // Lists
+                    if (html.startsWith('- ')) return `<div style="display:flex"><span style="margin-right:8px">•</span><span>${html.slice(2)}</span></div>`;
+                    
+                    // Inline Formatting
+                    html = html
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        .replace(/\*(.*?)\*/g, '<em>$1</em>');
+                        
+                    return `<div>${html}</div>`;
+                }).join('');
+            }
+        }).join('');
     };
 
     // --- MAIN RENDER LOOP ---
