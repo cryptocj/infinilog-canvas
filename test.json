@@ -476,5 +476,21 @@
     "roughness": 1,
     "startBindingId": "ws3w8233c",
     "endBindingId": "t1x6iluvy"
+  },
+  {
+    "id": "22e5c0naa",
+    "type": "text",
+    "x": 965.44921875,
+    "y": 771.6640625,
+    "width": 275,
+    "height": 137,
+    "strokeColor": "#000000",
+    "backgroundColor": "transparent",
+    "strokeWidth": 2,
+    "opacity": 1,
+    "text": "```\nlocal hello = 'world'\n```",
+    "seed": 1097.1781974291084,
+    "renderStyle": "sketchy",
+    "roughness": 1
   }
 ]
