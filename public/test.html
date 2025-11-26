@@ -76,24 +76,12 @@
         InfiniLog Static View
     </div>
 
+<!-- Safe Data Injection -->
+<script type="application/json" id="app-data">
+[]
+</script>
+
 <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    
-    console.log("Initializing InfiniLog Viewer...");
-
-    try {
-        mermaid.initialize({ startOnLoad: false, securityLevel: 'loose', theme: 'default' });
-    } catch(e) { console.warn("Mermaid init failed", e); }
-
-    const elements = JSON.parse(`[{"id":"oohkgpcgf","type":"rectangle","x":642.86328125,"y":228.6640625,"width":157.2578125,"height":109.51171875,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"seed":4943.603550165405,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"1fr4dzn41","type":"circle","x":943.17578125,"y":349.046875,"width":125.546875,"height":108.78515625,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"seed":7950.243387565876,"renderStyle":"sketchy","roughness":1,"cornerRadius":0},{"id":"1jy9qtfio","type":"arrow","x":800.12109375,"y":316.59542268563496,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":147.99196501537608,"y":62.44150897539765}],"seed":5649.255887064903,"renderStyle":"sketchy","roughness":1,"startBindingId":"oohkgpcgf","endBindingId":"1fr4dzn41"},{"id":"849ixrva3","type":"text","x":632.1875,"y":542.4375,"width":0.125,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"text":"Text","seed":6668.396012748267,"renderStyle":"sketchy","roughness":1,"cornerRadius":0},{"id":"p1fv9u1o7","type":"text","x":631.76171875,"y":542.125,"width":102,"height":34,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"text":"hello Text","seed":3039.279556261908,"renderStyle":"sketchy","roughness":1},{"id":"bstqij4ex","type":"mermaid","x":737.8125,"y":670.6953125,"width":40.4375,"height":144,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"text":"graph TD;\n    A-->B;","seed":1851.2942700201606,"renderStyle":"sketchy","roughness":1,"cornerRadius":0},{"id":"ws3w8233c","type":"mindmap","x":799.015625,"y":508.015625,"width":152,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Central Topic","seed":4271.208170880025,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"gyf02720s","type":"mindmap","x":1011.15234375,"y":508.14453125,"width":110,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Subtopic","seed":8185.6605610157885,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"p5s5112yy","type":"arrow","x":951.015625,"y":530.0668808500745,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":60.13671875,"y":0.04055735052941145}],"seed":8986.936237016122,"renderStyle":"sketchy","roughness":1,"startBindingId":"ws3w8233c","endBindingId":"gyf02720s"},{"id":"q9mj18a7s","type":"mindmap","x":1181.015625,"y":508.015625,"width":110,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Subtopic","seed":5047.166188882327,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"kohp6ctua","type":"arrow","x":1121.15234375,"y":530.1027927194722,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":59.86328125,"y":-0.04542918894435388}],"seed":4605.665690574136,"renderStyle":"sketchy","roughness":1,"startBindingId":"gyf02720s","endBindingId":"q9mj18a7s"},{"id":"iq377nvay","type":"mindmap","x":1351.015625,"y":508.015625,"width":110,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Subtopic","seed":2947.1322693798097,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"5ua2jwpmn","type":"arrow","x":1291.015625,"y":530.015625,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":60,"y":0}],"seed":1350.0323912847489,"renderStyle":"sketchy","roughness":1,"startBindingId":"q9mj18a7s","endBindingId":"iq377nvay"},{"id":"tv8p330t0","type":"mindmap","x":1351.015625,"y":572.015625,"width":100,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Topic","seed":3586.659046029236,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"dbr9fs98d","type":"arrow","x":1291.015625,"y":551.3489583333334,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":60,"y":23.272727272727252}],"seed":2626.9486833584856,"renderStyle":"sketchy","roughness":1,"startBindingId":"q9mj18a7s","endBindingId":"tv8p330t0"},{"id":"6t2hgk3ys","type":"mindmap","x":1351.015625,"y":636.015625,"width":100,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Topic","seed":4262.048147150161,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"v5iinenoo","type":"arrow","x":1264.375,"y":552.015625,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":108.28125,"y":84}],"seed":2151.2896172051155,"renderStyle":"sketchy","roughness":1,"startBindingId":"q9mj18a7s","endBindingId":"6t2hgk3ys"},{"id":"cjhdhh1j9","type":"mindmap","x":1351.015625,"y":700.015625,"width":100,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Topic","seed":6196.118521672851,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"d6okqqgcq","type":"arrow","x":1254.921875,"y":552.015625,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":127.1875,"y":148}],"seed":413.9781450395319,"renderStyle":"sketchy","roughness":1,"startBindingId":"q9mj18a7s","endBindingId":"cjhdhh1j9"},{"id":"uiskndaut","type":"mindmap","x":1011.15234375,"y":572.14453125,"width":100,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Topic","seed":5366.164868708429,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"ltg49q6qm","type":"arrow","x":938.8715060988609,"y":552.015625,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":72.28083765113911,"y":24.902615091367466}],"seed":178.71271314988334,"renderStyle":"sketchy","roughness":1,"startBindingId":"ws3w8233c","endBindingId":"uiskndaut"},{"id":"t1x6iluvy","type":"mindmap","x":1011.15234375,"y":636.14453125,"width":100,"height":44,"strokeColor":"#000000","backgroundColor":"#ffffff","strokeWidth":2,"opacity":1,"text":"Topic","seed":4018.027395173425,"renderStyle":"sketchy","roughness":1,"cornerRadius":8},{"id":"s4ydc8klf","type":"arrow","x":906.9756871932258,"y":552.015625,"width":0,"height":0,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"points":[{"x":0,"y":0},{"x":122.21659436354832,"y":84.12890625}],"seed":878.2907980245891,"renderStyle":"sketchy","roughness":1,"startBindingId":"ws3w8233c","endBindingId":"t1x6iluvy"},{"id":"bg4g2xwr1","type":"text","x":414,"y":265,"width":59,"height":34,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"text":"Text","seed":2601.288988167526,"renderStyle":"sketchy","roughness":1},{"id":"rujv2al1r","type":"text","x":884,"y":809,"width":254,"height":137,"strokeColor":"#000000","backgroundColor":"transparent","strokeWidth":2,"opacity":1,"text":"\`\`\`\nlet hello = 'world'\n\`\`\`","seed":568.5431732412893,"renderStyle":"sketchy","roughness":1}]`);
-    let view = { x: 0, y: 0, zoom: 1 };
-    
-    const container = document.getElementById('container');
-    const layer = document.getElementById('transform-layer');
-    const svg = document.getElementById('canvas');
-    let isDragging = false;
-    let start = { x: 0, y: 0 };
-
     // --- Rendering Logic (Ported from utils.ts) ---
     const random = (seed) => {
         const x = Math.sin(seed) * 10000;
@@ -106,7 +94,7 @@
 
     const getRoughRect = (w, h, seed, roughness, radius = 0) => {
         const r = Math.min(radius, Math.min(w, h) / 2);
-        const ro = roughness || 0; // Default to 0 if undefined
+        const ro = roughness || 0; 
         const o = (idx) => getOffset(-ro, ro, seed + idx);
         
         let path = `M ${r + o(1)} ${0 + o(2)} `;
@@ -265,20 +253,53 @@
 
     // --- Markdown/Code Logic ---
     const renderMarkdown = (text, color) => {
-        // Simple subset: bold, italic, code
+        if (!text) return "";
         let html = text
             .replace(/</g, '&lt;').replace(/>/g, '&gt;') // Escape HTML
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\*(.*?)\*/g, '<em>$1</em>')
             .replace(/\`\`\`([\s\S]*?)\`\`\`/g, '<pre style="background:#f3f4f6; padding:8px; border-radius:4px; font-family:monospace; font-size:0.8em; overflow-x:auto;">$1</pre>');
             
-        // Convert newlines to divs/br
+        // Use standard newline splitting
         return html.split('\n').map(line => `<div>${line || '<br/>'}</div>`).join('');
     };
 
-    const render = async () => {
-        console.log("Starting render...");
+    // --- MAIN RENDER LOOP ---
+    const init = async () => {
+        console.log("Initializing InfiniLog Viewer...");
+        
+        // Load Data Safe
+        const dataScript = document.getElementById('app-data');
+        if (!dataScript) {
+            console.error("No app data found");
+            return;
+        }
+        
+        let elements = [];
         try {
+            elements = JSON.parse(dataScript.textContent);
+        } catch(e) {
+            console.error("JSON Parse Error", e);
+            document.body.innerHTML = '<div style="color:red; padding:20px;">Failed to parse diagram data.</div>';
+            return;
+        }
+
+        // Load Mermaid Dynamically
+        let mermaid = null;
+        try {
+            const module = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs');
+            mermaid = module.default;
+            mermaid.initialize({ startOnLoad: false, securityLevel: 'loose', theme: 'default' });
+        } catch(e) {
+            console.warn("Mermaid failed to load", e);
+        }
+
+        const container = document.getElementById('container');
+        const layer = document.getElementById('transform-layer');
+        const svg = document.getElementById('canvas');
+        let view = { x: 0, y: 0, zoom: 1 };
+
+        const render = async () => {
             svg.innerHTML = '';
 
             // --- Auto Fit View ---
@@ -333,135 +354,146 @@
             }
 
             for (const el of elements) {
-                const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-                g.setAttribute("transform", `translate(${el.x || 0}, ${el.y || 0})`);
-                g.style.opacity = el.opacity !== undefined ? el.opacity : 1;
-                
-                if (el.type === 'text') {
-                    const fo = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
-                    fo.setAttribute("width", el.width || 100);
-                    fo.setAttribute("height", el.height || 20);
-                    fo.innerHTML = `<div class="font-hand" style="font-size: 20px; line-height: 1.2; color: ${el.strokeColor || '#000'}; white-space: pre-wrap;">${renderMarkdown(el.text || '', el.strokeColor)}</div>`;
-                    g.appendChild(fo);
-                } else if (el.type === 'mermaid') {
-                     // MERMAID RENDERING - Manual Generation
-                     const fo = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
-                     fo.setAttribute("width", el.width || 200);
-                     fo.setAttribute("height", el.height || 100);
-                     fo.style.overflow = "visible";
-                     
-                     const div = document.createElementNS("http://www.w3.org/1999/xhtml", "div");
-                     div.style.width = "100%";
-                     div.style.height = "100%";
-                     div.style.display = "flex";
-                     div.style.alignItems = "center";
-                     div.style.justifyContent = "center";
-                     
-                     const id = 'mermaid-' + Math.random().toString(36).substr(2, 9);
-                     
-                     try {
-                         const { svg } = await mermaid.render(id, el.text || "graph TD; Error");
-                         div.innerHTML = svg;
-                         const svgEl = div.querySelector('svg');
-                         if (svgEl) {
-                            svgEl.removeAttribute('height');
-                            svgEl.style.maxWidth = '100%';
-                         }
-                     } catch(err) {
-                         console.warn("Mermaid Render Error", err);
-                         div.textContent = "Diagram Error";
-                         div.style.color = "red";
-                         div.style.fontSize = "12px";
-                         div.style.border = "1px solid red";
-                     }
-
-                     fo.appendChild(div);
-                     g.appendChild(fo);
-                } else {
-                    const pathStr = getPath(el);
-                    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-                    path.setAttribute("d", pathStr);
-                    path.setAttribute("stroke", el.strokeColor || '#000');
-                    path.setAttribute("fill", el.backgroundColor || 'transparent');
-                    path.setAttribute("stroke-width", el.strokeWidth || 2);
-                    path.setAttribute("stroke-linecap", "round");
-                    path.setAttribute("stroke-linejoin", "round");
-                    path.setAttribute("vector-effect", "non-scaling-stroke");
-                    g.appendChild(path);
-
-                    if (el.text) {
+                try {
+                    const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+                    g.setAttribute("transform", `translate(${el.x || 0}, ${el.y || 0})`);
+                    g.style.opacity = el.opacity !== undefined ? el.opacity : 1;
+                    
+                    if (el.type === 'text') {
                         const fo = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
                         fo.setAttribute("width", el.width || 100);
-                        fo.setAttribute("height", el.height || 40);
-                        fo.style.pointerEvents = 'none';
-                        const textColor = (el.strokeColor === '#000000' && el.backgroundColor !== '#ffffff' && el.backgroundColor !== 'transparent') ? 'white' : 'black';
-                        fo.innerHTML = `<div class="w-full h-full flex items-center justify-center text-center p-1 font-hand" style="font-size: 20px; color: ${textColor}">${renderMarkdown(el.text || '', textColor)}</div>`;
+                        fo.setAttribute("height", el.height || 20);
+                        fo.innerHTML = `<div class="font-hand" style="font-size: 20px; line-height: 1.2; color: ${el.strokeColor || '#000'}; white-space: pre-wrap;">${renderMarkdown(el.text || '', el.strokeColor)}</div>`;
                         g.appendChild(fo);
+                    } else if (el.type === 'mermaid') {
+                         // MERMAID RENDERING
+                         const fo = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
+                         fo.setAttribute("width", el.width || 200);
+                         fo.setAttribute("height", el.height || 100);
+                         fo.style.overflow = "visible";
+                         
+                         const div = document.createElementNS("http://www.w3.org/1999/xhtml", "div");
+                         div.style.width = "100%";
+                         div.style.height = "100%";
+                         div.style.display = "flex";
+                         div.style.alignItems = "center";
+                         div.style.justifyContent = "center";
+                         
+                         const id = 'mermaid-' + Math.random().toString(36).substr(2, 9);
+                         
+                         if (mermaid) {
+                             try {
+                                 const { svg } = await mermaid.render(id, el.text || "graph TD; Error");
+                                 div.innerHTML = svg;
+                                 const svgEl = div.querySelector('svg');
+                                 if (svgEl) {
+                                    svgEl.removeAttribute('height');
+                                    svgEl.style.maxWidth = '100%';
+                                 }
+                             } catch(err) {
+                                 console.warn("Mermaid Render Error", err);
+                                 div.textContent = "Diagram Error";
+                                 div.style.color = "red";
+                                 div.style.fontSize = "12px";
+                                 div.style.border = "1px solid red";
+                             }
+                         } else {
+                             div.textContent = "Mermaid (Not Loaded)";
+                             div.style.color = "#999";
+                         }
+
+                         fo.appendChild(div);
+                         g.appendChild(fo);
+                    } else {
+                        const pathStr = getPath(el);
+                        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                        path.setAttribute("d", pathStr);
+                        path.setAttribute("stroke", el.strokeColor || '#000');
+                        path.setAttribute("fill", el.backgroundColor || 'transparent');
+                        path.setAttribute("stroke-width", el.strokeWidth || 2);
+                        path.setAttribute("stroke-linecap", "round");
+                        path.setAttribute("stroke-linejoin", "round");
+                        path.setAttribute("vector-effect", "non-scaling-stroke");
+                        g.appendChild(path);
+
+                        if (el.text) {
+                            const fo = document.createElementNS("http://www.w3.org/2000/svg", "foreignObject");
+                            fo.setAttribute("width", el.width || 100);
+                            fo.setAttribute("height", el.height || 40);
+                            fo.style.pointerEvents = 'none';
+                            const textColor = (el.strokeColor === '#000000' && el.backgroundColor !== '#ffffff' && el.backgroundColor !== 'transparent') ? 'white' : 'black';
+                            fo.innerHTML = `<div class="w-full h-full flex items-center justify-center text-center p-1 font-hand" style="font-size: 20px; color: ${textColor}">${renderMarkdown(el.text || '', textColor)}</div>`;
+                            g.appendChild(fo);
+                        }
                     }
+                    svg.appendChild(g);
+                } catch(renderErr) {
+                    console.error("Error rendering element", el, renderErr);
                 }
-                svg.appendChild(g);
             }
+        };
 
-        } catch(e) {
-            console.error("Render Error:", e);
-        }
+        const updateTransform = () => {
+            if (isNaN(view.x) || isNaN(view.y) || isNaN(view.zoom)) {
+                view = { x: 0, y: 0, zoom: 1 };
+            }
+            layer.style.transform = `translate(${view.x}px, ${view.y}px) scale(${view.zoom})`;
+        };
+
+        let isDragging = false;
+        let start = { x: 0, y: 0 };
+
+        container.addEventListener('wheel', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                e.preventDefault();
+                const zoomSensitivity = 0.001;
+                const delta = -e.deltaY * zoomSensitivity;
+                const newZoom = Math.max(0.1, Math.min(5, view.zoom + delta));
+                
+                const rect = container.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+                
+                const worldX = (mouseX - view.x) / view.zoom;
+                const worldY = (mouseY - view.y) / view.zoom;
+                
+                view.x = mouseX - worldX * newZoom;
+                view.y = mouseY - worldY * newZoom;
+                view.zoom = newZoom;
+            } else {
+                view.x -= e.deltaX;
+                view.y -= e.deltaY;
+            }
+            updateTransform();
+        });
+
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            container.style.cursor = 'grabbing';
+            start = { x: e.clientX, y: e.clientY };
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const dx = e.clientX - start.x;
+            const dy = e.clientY - start.y;
+            view.x += dx;
+            view.y += dy;
+            start = { x: e.clientX, y: e.clientY };
+            updateTransform();
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.style.cursor = 'grab';
+        });
+
+        // Trigger Render
+        render();
     };
-
-    // --- Interaction Logic ---
-    const updateTransform = () => {
-        if (isNaN(view.x) || isNaN(view.y) || isNaN(view.zoom)) {
-            view = { x: 0, y: 0, zoom: 1 };
-        }
-        layer.style.transform = `translate(${view.x}px, ${view.y}px) scale(${view.zoom})`;
-    };
-
-    container.addEventListener('wheel', (e) => {
-        if (e.ctrlKey || e.metaKey) {
-            e.preventDefault();
-            const zoomSensitivity = 0.001;
-            const delta = -e.deltaY * zoomSensitivity;
-            const newZoom = Math.max(0.1, Math.min(5, view.zoom + delta));
-            
-            const rect = container.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left;
-            const mouseY = e.clientY - rect.top;
-            
-            const worldX = (mouseX - view.x) / view.zoom;
-            const worldY = (mouseY - view.y) / view.zoom;
-            
-            view.x = mouseX - worldX * newZoom;
-            view.y = mouseY - worldY * newZoom;
-            view.zoom = newZoom;
-        } else {
-            view.x -= e.deltaX;
-            view.y -= e.deltaY;
-        }
-        updateTransform();
-    });
-
-    container.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        container.style.cursor = 'grabbing';
-        start = { x: e.clientX, y: e.clientY };
-    });
-
-    window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const dx = e.clientX - start.x;
-        const dy = e.clientY - start.y;
-        view.x += dx;
-        view.y += dy;
-        start = { x: e.clientX, y: e.clientY };
-        updateTransform();
-    });
-
-    window.addEventListener('mouseup', () => {
-        isDragging = false;
-        container.style.cursor = 'grab';
-    });
-
-    // Initial Render
-    render();
+    
+    // Start
+    init();
 </script>
 </body>
 </html>
